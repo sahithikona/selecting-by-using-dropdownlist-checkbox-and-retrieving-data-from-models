@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <form action="{% url 'select_and_display' %}" method="post">
+            {% csrf_token %}
+            topic name:
+            <br>
+
+            {% for t in tol %} 
+            <input type="checkbox" name="tn" id="tn" value="{{t.topic_name}}">
+            <label for="tn">{{t.topic_name}}</label><br><br>
+
+
+
+            {% endfor %}  
+        
+        
+            <input type="submit" value="submit">
+
+
+        </form>
+    </center>
+</body>
+</html>
